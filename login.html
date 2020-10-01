@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+    
+
+    <title>Login Page</title>
+  <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link href="css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+   
+   
+  
+
+    
+    <link rel="stylesheet" type="text/css" href="styles.css">
+</head>
+
+ <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+	
+
+
+<script type="text/javascript">
+    function validate() {
+        var name = document.f1.name.value;
+        var password = document.f1.password.value;
+        var status = false;
+        if (name == "admin") {
+            document.getElementById("namelocation").innerHTML =
+            "right";
+            status = true;
+        } else {
+            document.getElementById("namelocation").innerHTML = "wrong ";
+            status = false;
+        }
+
+        if (password =="admin") {
+            document.getElementById("passwordlocation").innerHTML =
+                "Ok";
+            status =true;
+        } else {
+            document.getElementById("passwordlocation").innerHTML = " wrong";
+            status = false;
+        }
+
+        return status;
+    }
+</script>
+
+<body><div class="family">
+    <div class="container">
+        <div class="d-flex justify-content-center h-100">
+            <div class="card">
+                <div class="card-header">
+                    <h3><img src="images/splash.png" width="50"> UFD</h3>
+                
+                    <div class="d-flex justify-content-end social_icon">
+
+                    </div>
+                </div>
+                <div class="card-body">
+                    <form name="f1" action="admin.html" onsubmit="return validate()">
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" ><i class="fa fa-user" ></i></span>
+                            </div>
+                            <input type="text" name="name" class="form-control" placeholder="username">
+                            <span id="namelocation" style="color:red"></span> <br>
+
+
+                        </div>
+                        <div class="input-group form-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="fa fa-lock"></i></span>
+                            </div>
+                            <input type="password" name="password" class="form-control" placeholder="password"><br>
+                            <span id="passwordlocation" style="color:red"></span>
+                        </div><br>
+                        <div class="row align-items-center remember">
+                            
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" value="Login" class="btn btn-secondary" style="float:right;">
+                        </div>
+                    </form>
+                </div>
+                         <div class="card-footer">
+
+<style>
+    body{
+
+        background-image: url(images/bg-01.jpg);
+        background-size: 50%;
+    }
+    .family{
+        
+    padding:50px;
+
+    }
+
+                    </style>
+
+                </div>
+            </div>
+        </div>
+    </div>
+   </div>
+</body>
+
+</html>

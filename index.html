@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+<style>
+    
+    .flex-container {
+     
+       
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: absolute;
+          object-position: center;
+           z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        
+    }
+    
+   .flex-item {
+       
+       background:-webkit-linear-gradient(-135deg,lavender,ghostwhite);
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -webkit-align-items: center;
+        -moz-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        -webkit-box-pack: center;
+        -webkit-justify-content: center;
+        -moz-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+       background-size: cover;
+    }
+    
+    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="fonts/font-awesome-4.7.0/css/font-awesome.css">
+
+
+    <title>Devotional </title>
+</head>
+
+<body>
+  <div id ="main" class=""> 
+      
+      <div class="flex-container">
+    <nav class="navbar navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand" href="#">Devotion App</a>
+            <a href="login.html" class=" btn btn-primary"><i class="fa fa-dashcube"></i></a>
+        </div>
+    </nav>
+      </div>
+    <div class="container">
+        <div class="row my-5">
+            <div class="col-md-4">
+                <div class="card">
+                  
+                        <form id="form-Task">
+                            
+                        </form>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                
+                <hr>
+                <div id="tasks"></div>
+
+            </div>
+
+        </div>
+
+    <div id="splash"  class="flex-container" 
+        style ="background:-webkit-linear-gradient(-135deg,aqua,gold); display: none"  >
+    
+     <!--Center align Splash contents in all screen sizes-->
+         <div class ="flex-item" >
+          <center>  <img src="images/splash.png" 
+               alt="app_icon" 
+               style="width:40%; top:1; "
+               /><br><br>
+           <p> UMaT FIDS DEVOTIONAL</p></center>
+           
+    </div>
+      </div></div>
+
+    <script src="js/user.js"></script>
+ <script type="text/javascript">
+    
+    function fade(element) {
+    var op = 1;  // initial opacity
+    var timer = setInterval(function () {
+        if (op <= 0.1){
+            clearInterval(timer);
+          
+            element.style.display = 'none';
+        }
+        element.style.opacity = op;
+        element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+        op -= op * 0.1;
+    }, 50);
+}
+
+    setTimeout(function(){ 
+          
+             if(typeof(Storage) !== "undefined") {
+         
+              console.log("Already shown" +sessionStorage.getItem('spalashShown'));
+
+               if( !sessionStorage.getItem('spalashShown') || sessionStorage.getItem('spalashShown') === null ) {  
+                 
+               document.getElementById('splash') .style.display = 'inline';
+
+                //Display splash
+                setTimeout(function(){   
+
+                 fade(document.getElementById('splash'));
+                  // document.getElementById('splash') .style.display = 'none'
+                   // window.location = "http://hiteshsahu.com";
+                  
+                 sessionStorage.setItem('spalashShown', true  );
+              }
+               , 3000);
+      
+                  } else {
+                    
+                     //Display Main Content
+                      document.getElementById('splash') .style.display = 'none'
+                        console.log("Already shown");
+                     }
+                  }
+         
+                else {
+                        document.getElementById("result").innerHTML = "Sorry, your browser does not support web storage...";
+                      }
+                         }, 0);
+
+  	</script>
+</body>
+
+</html>
